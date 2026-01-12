@@ -1,0 +1,40 @@
+﻿.custom-nav {
+    --bs-navbar-bg: #ffefbf;
+    background-color: var(--bs-navbar-bg) !important;
+    --bs-navbar-color: rgb(80, 80, 80);
+    --bs-navbar-hover-color: #000000;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.nav-link,
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    color: black;
+}
+
+.no-caret .dropdown-toggle::after {
+    display: none !important;
+}
+
+
+.mainvw {
+    padding: 0 7%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.maincontainer {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
