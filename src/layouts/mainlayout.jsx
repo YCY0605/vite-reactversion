@@ -1,9 +1,12 @@
 ﻿import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { NavDropdown, Offcanvas, Collapse } from 'react-bootstrap';
-
+import Cookies from 'js-cookie';
 import '../assets/css/site.css';
 import '../assets/css/mainLayout.css';
+
+const UserName = Cookies.get('userName');
+const Name = decodeURIComponent(Cookies.get('name') || '');
 
 const MainLayout = () => {
     // 狀態管理：控制側邊選單開關
@@ -41,7 +44,7 @@ const MainLayout = () => {
 
                         <Link className="navbar-brand me-auto ms-2" to="/">
                             <i style={{ color: '#F75000' }} className="fa-solid fa-truck-fast"></i>
-                            &nbsp;XX搬運
+                            <b>&nbsp;TiMove</b>
                         </Link>
                         <NavDropdown
                             title={<i className="fa-solid fa-bell fa-xl"></i>}
@@ -59,7 +62,7 @@ const MainLayout = () => {
                         </NavDropdown>
 
                         <NavDropdown
-                            title="[帳號] - [員工姓名]"
+                            title={`${UserName} - ${Name }`}
                             id="nav-user"
                             align="end"
                             style={{marginLeft: '1vw'} }

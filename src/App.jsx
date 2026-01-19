@@ -5,11 +5,16 @@ import LoginPage from './pages/Login';
 import ReportSearch from './pages/Search'
 import ReportProgress from './pages/Progress'
 import ReportCaseDetails from './pages/CaseDetails'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout />, // Layout
+        element: (
+            <ProtectedRoute>
+                <MainLayout />
+            </ProtectedRoute>
+        ), // Layout
         children: [
             {
                 index: true, // 這裡代表預設首頁內容
